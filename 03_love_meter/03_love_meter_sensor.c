@@ -4,8 +4,7 @@
 #include <util/delay.h>
 
 void start_conversion();
-uint16_t duty_cycle = 0;
-volatile static uint8_t adc_convert_done = 0;
+
 
 void setup_adc() {
     ADMUX = (1 << REFS0) | (1 << MUX2) | (1 << MUX0);
@@ -24,6 +23,7 @@ void stop_conversion() {
 int main() {
 
     const float baseline_temp = 20.0;
+    uint16_t duty_cycle = 0;
 
     DDRB |= (1 << DDB0); 
     DDRD |= (1 << DDD7 | 1 << DDD6);
