@@ -27,8 +27,6 @@ void set_up() {
 
 int main() {
 
-    uint8_t increment_flag = 0; 
-    
     setup_adc();
     set_up();
 
