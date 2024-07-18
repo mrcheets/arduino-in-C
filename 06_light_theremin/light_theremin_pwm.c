@@ -103,9 +103,6 @@ int main() {
 
     start_pwm();
     
-    if(sensor_low == 1023 || (sensor_low >= sensor_high)) sensor_low = 0;
-    if(sensor_high == 0 || (sensor_high <= sensor_low)) sensor_high = 1023;
-        
     ICR1 = 2500;
     top = 1000;
     while(1) {
