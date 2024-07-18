@@ -109,7 +109,7 @@ int main() {
     ICR1 = 2500;
     top = 1000;
     while(1) {
-        top = simple_map(read_channel(0x05), 0, 1023, 2000, 65000);
+        top = simple_map(read_channel(0x05), sensor_low, sensor_high, 2000, 65000);
     	if(top != ICR1) {
     	    ICR1 = top;
     	    OCR1A = top/2; 
